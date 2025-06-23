@@ -1,0 +1,126 @@
+---
+import SocialCard from "../../components/cards/SocialCard.astro";
+import AstroIcon from "../../components/icons/posts/skills/AstroIcon.astro";
+import CSSIcon from "../../components/icons/posts/skills/CSSIcon.astro";
+import HTMLIcon from "../../components/icons/posts/skills/HTMLIcon.astro";
+import JavaScriptIcon from "../../components/icons/posts/skills/JavaScriptIcon.astro";
+import ReactIcon from "../../components/icons/posts/skills/ReactIcon.astro";
+import { frontend } from "../../data/posts/skills-data.json";
+
+const { name, timeInit, description, category } = frontend;
+---
+
+<SocialCard
+  title={name}
+  timeInit={timeInit}
+  description={description}
+  category={category}
+>
+  <div class="container-frontend">
+    <div class="first">
+      <figure class="html">
+        <HTMLIcon />
+        <figcaption>HTML</figcaption>
+      </figure>
+      <figure class="css">
+        <CSSIcon />
+        <figcaption>CSS</figcaption>
+      </figure>
+      <figure class="js">
+        <JavaScriptIcon />
+        <figcaption>JavaScript</figcaption>
+      </figure>
+    </div>
+    <div class="second">
+      <figure class="react">
+        <ReactIcon />
+        <figcaption>React</figcaption>
+      </figure>
+      <figure class="astro">
+        <AstroIcon />
+        <figcaption>Astro</figcaption>
+      </figure>
+    </div>
+  </div>
+</SocialCard>
+
+<style>
+  .container-frontend {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    padding: 1rem;
+  }
+
+  .first {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .second {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    background-color: #f4f2ee;
+    gap: 3px;
+
+    width: 100%;
+    height: 100%;
+
+    transition: transform 0.2s ease;
+  }
+
+  figure:hover {
+    transform: scale(1.1);
+  }
+
+  figcaption {
+    text-align: center;
+    color: black;
+  }
+
+  .html:hover {
+    background-color: #fbeee6;
+  }
+
+  .css:hover {
+    background-color: #eaf2f8;
+  }
+
+  .js:hover {
+    background-color: #fef9e7;
+  }
+
+  .react:hover {
+    background-color: #ebf5fb;
+  }
+
+  .astro:hover {
+    background-color: #fbeee6;
+  }
+
+  @media (max-width: 450px) {
+    figcaption {
+      display: none;
+    }
+  }
+</style>

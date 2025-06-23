@@ -1,0 +1,14 @@
+{
+     "frontend":{
+        "name": "Frontend",
+        "timeInit": "2024",
+        "description": "Buscando fortalecer mi perfil como desarrollador, inicié mi aprendizaje en desarrollo frontend, adquiriendo conocimientos en HTML, CSS, JavaScript, así como en frameworks modernos como React y Astro.",
+        "category": "skill"
+    },
+    "backend":{
+        "name": "Backend",
+        "timeInit": "2019",
+        "description": "Motivado por la curiosidad, estudié Java y desarrollé mis primeras aplicaciones mientras aprendía los fundamentos del desarrollo de software, luego profundicé con Spring y MySQL, lo que me permitió avanzar en mi formación como desarrollador backend.",
+        "category": "skill"
+    }
+}

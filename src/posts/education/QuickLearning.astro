@@ -1,0 +1,32 @@
+---
+import SocialCard from "../../components/cards/SocialCard.astro";
+import { quickLearning } from "../../data/posts/education-data.json";
+
+const { name, timeInit, timeEnd, description, category, image } = quickLearning;
+---
+
+<SocialCard
+  title={name}
+  timeInit={timeInit}
+  timeEnd={timeEnd}
+  description={description}
+  category={category}
+>
+  <div class="container-quick-learning">
+    <img src={image} alt={name} />
+  </div>
+</SocialCard>
+
+<style>
+  .container-quick-learning {
+    width: 100%;
+    height: 100%;
+  }
+
+  .container-quick-learning img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+</style>

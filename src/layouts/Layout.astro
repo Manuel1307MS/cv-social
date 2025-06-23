@@ -1,22 +1,176 @@
+---
+import { profile } from "../data/profile/profile-data.json";
+const { name, rol, image } = profile;
+import "../assets/styles/Colores.css";
+---
+
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{name}</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={`Portfolio de ${name}`} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={`Portfolio de ${name}`} />
+    <meta property="og:description" content={rol} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+  /* Reset general */
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Body y html */
+  html,
+  body {
+    min-height: 100vh;
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    background-color: var(--color-background-secondary);
+    color: var(--color-text, #000);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    padding: 0;
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+  }
+
+  /* Textos comunes */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  strong,
+  em,
+  address,
+  blockquote,
+  figcaption,
+  time {
+    margin: 0;
+    padding: 0;
+    font-weight: inherit;
+    font-style: normal;
+    font-size: 1rem;
+
+    color: var(--color-primary);
+  }
+
+  /* Listas */
+  ul,
+  ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Enlaces */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Imágenes y multimedia */
+  img,
+  picture,
+  video,
+  canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Formularios */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  /* Tables */
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  /* Code blocks */
+  pre,
+  code {
+    font-family: monospace, monospace;
+    font-size: 1em;
+  }
+
+  /*aside*/
+  aside {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+  }
+
+  /*svg*/
+  svg {
+    margin: 0;
+    padding: 0;
+  }
 </style>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const icons = document.querySelectorAll(".send");
+
+    icons.forEach((icon) => {
+      icon.addEventListener("click", async () => {
+        const shareData = {
+          title: document.title,
+          text: "¡Mira esta página web!",
+          url: window.location.href,
+        };
+
+        if (navigator.share) {
+          try {
+            await navigator.share(shareData);
+          } catch (err) {
+            console.error("Error al compartir:", err);
+          }
+        } else {
+          try {
+            await navigator.clipboard.writeText(shareData.url);
+            alert("Enlace copiado al portapapeles.");
+          } catch (err) {
+            console.error("Error al copiar enlace:", err);
+            alert("No se pudo compartir ni copiar el enlace.");
+          }
+        }
+      });
+    });
+  });
+</script>

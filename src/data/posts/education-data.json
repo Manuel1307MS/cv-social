@@ -1,0 +1,26 @@
+{
+    "quickLearning":{
+        "name": "Quick Learning",
+        "timeInit": "2024",
+        "timeEnd": "2025",
+        "description": "Para complementar mis conocimientos técnicos y de negocios, comencé a estudiar inglés en la escuela de idiomas Quick Learning, donde he alcanzado el nivel B1, fortaleciendo mis habilidades en comprensión auditiva, expresión oral, lectura y escritura, y mejorando significativamente mi capacidad para comunicarme en diferentes situaciones.",
+        "category": "education",
+        "image": "posts/education/quick-learning.webp"
+    },
+    "university":{
+        "name": "Universidad de Xalapa",
+        "timeInit": "2019",
+        "timeEnd": "2024",
+        "description": "Con la intención de diseñar soluciones de software que respondan a necesidades empresariales, decidí estudiar Negocios Internacionales para adquirir conocimientos estratégicos sobre comercio, finanzas y gestión.",
+        "category": "education",
+        "image": "posts/education/university.webp"
+    },
+    "highSchool":{
+        "name": "Conalep 103",
+        "timeInit": "2017",
+        "timeEnd": "2019",
+        "description": "Mi formación como Técnico Bachiller en Informática fue el punto de partida para descubrir mi interés por la programación y la tecnología, impulsando un crecimiento sostenido en el área.",
+        "category": "education",
+        "image": "posts/education/high-school.webp"
+    }
+}

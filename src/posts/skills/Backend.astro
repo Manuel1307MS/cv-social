@@ -1,0 +1,86 @@
+---
+import SocialCard from "../../components/cards/SocialCard.astro";
+import JavaIcon from "../../components/icons/posts/skills/JavaIcon.astro";
+import MySQLIcon from "../../components/icons/posts/skills/MySQLIcon.astro";
+import SpringIcon from "../../components/icons/posts/skills/SpringIcon.astro";
+import { backend } from "../../data/posts/skills-data.json";
+
+const { name, timeInit, description, category } = backend;
+---
+
+<SocialCard
+  title={name}
+  timeInit={timeInit}
+  description={description}
+  category={category}
+>
+  <div class="container-backend">
+    <figure class="java">
+      <JavaIcon />
+      <figcaption>Java</figcaption>
+    </figure>
+    <figure class="spring">
+      <SpringIcon />
+      <figcaption>Spring</figcaption>
+    </figure>
+    <figure class="mysql">
+      <MySQLIcon />
+      <figcaption>MySQL</figcaption>
+    </figure>
+  </div>
+</SocialCard>
+
+<style>
+  .container-backend {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    padding: 1rem;
+  }
+
+  figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    background-color: #f4f2ee;
+    gap: 3px;
+
+    width: 100%;
+    height: 60%;
+
+    transition: transform 0.2s ease;
+  }
+
+  figure:hover {
+    transform: scale(1.1);
+  }
+
+  figcaption {
+    color: black;
+  }
+
+  .java:hover {
+    background-color: #eaf2f8;
+  }
+
+  .spring:hover {
+    background-color: #eafaf1;
+  }
+
+  .mysql:hover {
+    background-color: #eaf2f8;
+  }
+
+  @media (max-width: 450px) {
+    figcaption {
+      display: none;
+    }
+  }
+</style>

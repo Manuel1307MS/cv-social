@@ -1,0 +1,100 @@
+---
+import AboutMeCard from "../components/cards/AboutMeCard.astro";
+import Footer from "../components/cards/Footer.astro";
+import InterestsCard from "../components/cards/InterestsCard.astro";
+import NavCard from "../components/cards/NavCard.astro";
+import ProfileCard from "../components/cards/ProfileCard.astro";
+---
+
+<div class="layout-split">
+  <div class="container-profile-card-desk">
+    <ProfileCard />
+    <div class="about-me-desk">
+      <AboutMeCard />
+    </div>
+    <div class="interests-desk">
+      <InterestsCard />
+    </div>
+  </div>
+  <div class="container-cards">
+    <div class="nav-card">
+      <NavCard />
+    </div>
+    <div class="container-profile-card-mobile">
+      <ProfileCard />
+    </div>
+    <div class="about-me-mobile">
+      <AboutMeCard />
+    </div>
+    <div class="interests-mobile">
+      <InterestsCard />
+    </div>
+    <slot />
+    <Footer />
+  </div>
+</div>
+
+<style>
+  .layout-split {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+
+    align-items: start;
+  }
+
+  .container-profile-card-desk {
+    position: sticky;
+    top: 2rem;
+    margin-top: 2rem;
+
+    width: 100%;
+    max-width: 300px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-self: end;
+  }
+
+  .about-me-desk {
+    margin-top: 1rem;
+  }
+
+  .interests-desk {
+    margin-top: 1rem;
+  }
+
+  .container-profile-card-mobile,
+  .about-me-mobile,
+  .interests-mobile {
+    display: none;
+  }
+
+  .container-cards {
+    width: 100%;
+    max-width: 600px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    justify-self: start;
+  }
+
+  .nav-card {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+  }
+
+  @media (max-width: 600px) {
+    .container-profile-card-desk {
+      display: none;
+    }
+
+    .layout-split {
+      display: flex;
+    }
+  }
+</style>

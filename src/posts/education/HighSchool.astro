@@ -1,0 +1,32 @@
+---
+import SocialCard from "../../components/cards/SocialCard.astro";
+import { highSchool } from "../../data/posts/education-data.json";
+
+const { name, timeInit, timeEnd, description, category, image } = highSchool;
+---
+
+<SocialCard
+  title={name}
+  timeInit={timeInit}
+  timeEnd={timeEnd}
+  description={description}
+  category={category}
+>
+  <div class="container-high-school">
+    <img src={image} alt={name} />
+  </div>
+</SocialCard>
+
+<style>
+  .container-high-school {
+    width: 100%;
+    height: 100%;
+  }
+
+  .container-high-school img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+</style>

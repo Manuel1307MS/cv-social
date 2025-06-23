@@ -1,0 +1,141 @@
+---
+import EducationIcon from "../icons/nav/EducationIcon.astro";
+import HomeIcon from "../icons/nav/HomeIcon.astro";
+import ProjectIcon from "../icons/nav/ProjectIcon.astro";
+import SkillIcon from "../icons/nav/SkillIcon.astro";
+---
+
+<nav>
+  <ul>
+    <li data-category="all" class="active">
+      <a href="#">
+        <figure>
+          <HomeIcon />
+          <figcaption>Inicio</figcaption>
+        </figure>
+      </a>
+    </li>
+    <li data-category="project">
+      <a href="#">
+        <figure>
+          <ProjectIcon />
+          <figcaption>Proyectos</figcaption>
+        </figure>
+      </a>
+    </li>
+    <li data-category="education">
+      <a href="#">
+        <figure>
+          <EducationIcon />
+          <figcaption>Educación</figcaption>
+        </figure>
+      </a>
+    </li>
+    <li data-category="skill">
+      <a href="#">
+        <figure>
+          <SkillIcon />
+          <figcaption>Skills</figcaption>
+        </figure>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  nav {
+    background-color: var(--color-background-primary);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.3rem;
+    padding: 0.5rem;
+  }
+
+  figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
+  }
+
+  li {
+    opacity: 0.6;
+  }
+
+  li:hover {
+    opacity: 1;
+  }
+
+  .active {
+    opacity: 1;
+    font-weight: bold;
+    border-bottom: solid var(--color-primary);
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const navItems = document.querySelectorAll("nav ul li");
+    const cards = document.querySelectorAll(".container-cards .social-card");
+    const profileCardMobile = document.querySelector(
+      ".container-profile-card-mobile"
+    );
+    const aboutMeMobile = document.querySelector(".about-me-mobile");
+    const interestsMobile = document.querySelector(".interests-mobile");
+
+    let currentCategory = "all";
+
+    function toggleMobileVisibility(category) {
+      if (window.innerWidth <= 600) {
+        const show = category === "all";
+        profileCardMobile.style.display = show ? "flex" : "none";
+        aboutMeMobile.style.display = show ? "flex" : "none";
+        interestsMobile.style.display = show ? "flex" : "none";
+      }
+    }
+
+    function setActiveItem(category) {
+      navItems.forEach((item) => {
+        item.classList.toggle("active", item.dataset.category === category);
+      });
+    }
+
+    navItems.forEach((item) => {
+      const link = item.querySelector("a");
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+
+        const category = item.dataset.category;
+        currentCategory = category;
+
+        cards.forEach((card) => {
+          const match =
+            category === "all" || card.dataset.category === category;
+          card.style.display = match ? "flex" : "none";
+        });
+
+        toggleMobileVisibility(category);
+        setActiveItem(category);
+      });
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 600) {
+        profileCardMobile.style.display = "none";
+        aboutMeMobile.style.display = "none";
+        interestsMobile.style.display = "none";
+      } else {
+        toggleMobileVisibility(currentCategory);
+      }
+    });
+
+    setActiveItem(currentCategory);
+    toggleMobileVisibility(currentCategory);
+  });
+</script>

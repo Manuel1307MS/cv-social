@@ -1,0 +1,24 @@
+{
+  "profile": {
+    "name": "Manuel Murillo Sánchez",
+    "rol": "Desarrollador Backend Java",
+    "image": "/profile/photo.jpg",
+    "email": "manuel1307ms@gmail.com",
+    "github": "https://github.com/Manuel1307MS",
+    "linkedin": "https://www.linkedin.com/in/manuel1307ms/",
+    "cv": "/cv/curriculum.pdf",
+    "location": {
+      "city": "Juárez, Chihuahua",
+      "country": "México"
+    }
+  },
+  "aboutme": "Desarrollador backend Java con conocimientos en negocios, enfocado en diseñar soluciones que optimizan procesos y potencian resultados empresariales.",
+  "interests": [
+    "Tecnología",
+    "Programación",
+    "Innovación",
+    "Negocios",
+    "Inteligencia Artificial",
+    "Idiomas"
+  ]
+}

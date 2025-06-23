@@ -1,0 +1,143 @@
+---
+import { profile } from "../../data/profile/profile-data.json";
+import VerifiedIcon from "../icons/general/VerifiedIcon.astro";
+import CVIcon from "../icons/profile/CVIcon.astro";
+import GitHub from "../icons/profile/GitHub.astro";
+import GmailIcon from "../icons/profile/GmailIcon.astro";
+import LinkedInIcon from "../icons/profile/LinkedInIcon.astro";
+
+const { name, rol, image, email, github, linkedin, cv, location } = profile;
+const { city, country } = location;
+---
+
+<article class="profile-card">
+  <header class="header-profile">
+    <img src={image} alt={`Foto de perfil de ${name}`} />
+  </header>
+  <section class="info-profile">
+    <h1>{name} <VerifiedIcon /></h1>
+    <h2>{rol}</h2>
+    <address>
+      {city}, {country}
+    </address>
+  </section>
+  <footer class="social-profile">
+    <a href={`mailto:${email}`} aria-label={`Enviar correo a ${name}`}
+      ><GmailIcon />
+    </a>
+    <a href={github} target="_blank" aria-label={`Perfil GitHub de ${name}`}
+      ><GitHub />
+    </a>
+    <a href={linkedin} target="_blank" aria-label={`Perfil LinkedIn de ${name}`}
+      ><LinkedInIcon />
+    </a>
+    <a
+      href={cv}
+      download={`${name}-CV.pdf`}
+      aria-label={`Descargar CV de ${name}`}
+      ><CVIcon />
+    </a>
+  </footer>
+</article>
+
+<style>
+  .profile-card {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background-color: var(--color-background-primary);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .header-profile {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 1rem;
+  }
+
+  .header-profile::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75%;
+    background: linear-gradient(to bottom, #0a66c2, white);
+    z-index: 0;
+  }
+
+  img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 128px;
+    border-radius: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .info-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .social-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  h1 {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  address {
+    text-align: center;
+  }
+
+  a {
+    transition: transform 0.2s ease;
+  }
+
+  a:hover {
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 600px) {
+    .profile-card {
+      align-items: start;
+    }
+
+    .header-profile {
+      justify-content: left;
+      padding-left: 1rem;
+    }
+
+    .info-profile {
+      align-items: start;
+      padding-left: 1rem;
+    }
+
+    .social-profile {
+      padding-left: 1rem;
+    }
+  }
+</style>
