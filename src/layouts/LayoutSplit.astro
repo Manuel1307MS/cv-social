@@ -4,27 +4,26 @@ import Footer from "../components/cards/Footer.astro";
 import InterestsCard from "../components/cards/InterestsCard.astro";
 import NavCard from "../components/cards/NavCard.astro";
 import ProfileCard from "../components/cards/ProfileCard.astro";
+import TechnologiesCard from "../components/cards/TechnologiesCard.astro";
 ---
 
 <div class="layout-split">
   <div class="container-profile-card-desk">
     <ProfileCard />
-    <div class="about-me-desk">
-      <AboutMeCard />
-    </div>
-    <div class="interests-desk">
-      <InterestsCard />
-    </div>
+    <AboutMeCard />
   </div>
   <div class="container-cards">
     <div class="nav-card">
       <NavCard />
     </div>
-    <div class="container-profile-card-mobile">
+    <div class="profile-mobile">
       <ProfileCard />
     </div>
     <div class="about-me-mobile">
       <AboutMeCard />
+    </div>
+    <div class="technologies-mobile">
+      <TechnologiesCard />
     </div>
     <div class="interests-mobile">
       <InterestsCard />
@@ -32,12 +31,16 @@ import ProfileCard from "../components/cards/ProfileCard.astro";
     <slot />
     <Footer />
   </div>
+  <div class="container-interests-desk">
+    <TechnologiesCard />
+    <InterestsCard />
+  </div>
 </div>
 
 <style>
   .layout-split {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
 
     align-items: start;
@@ -55,20 +58,8 @@ import ProfileCard from "../components/cards/ProfileCard.astro";
     flex-direction: column;
 
     justify-self: end;
-  }
 
-  .about-me-desk {
-    margin-top: 1rem;
-  }
-
-  .interests-desk {
-    margin-top: 1rem;
-  }
-
-  .container-profile-card-mobile,
-  .about-me-mobile,
-  .interests-mobile {
-    display: none;
+    gap: 1rem;
   }
 
   .container-cards {
@@ -80,6 +71,31 @@ import ProfileCard from "../components/cards/ProfileCard.astro";
     gap: 1rem;
 
     justify-self: start;
+
+    justify-self: center;
+  }
+
+  .container-interests-desk {
+    position: sticky;
+    top: 2rem;
+    margin-top: 2rem;
+
+    width: 100%;
+    max-width: 300px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-self: start;
+
+    gap: 1rem;
+  }
+
+  .profile-mobile,
+  .about-me-mobile,
+  .technologies-mobile,
+  .interests-mobile {
+    display: none;
   }
 
   .nav-card {
@@ -88,13 +104,20 @@ import ProfileCard from "../components/cards/ProfileCard.astro";
     z-index: 99;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 900px) {
     .container-profile-card-desk {
+      display: none;
+    }
+
+    .container-interests-desk {
       display: none;
     }
 
     .layout-split {
       display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
   }
 </style>

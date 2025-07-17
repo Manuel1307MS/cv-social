@@ -22,19 +22,26 @@ const { city, country } = location;
     </address>
   </section>
   <footer class="social-profile">
-    <a href={`mailto:${email}`} aria-label={`Enviar correo a ${name}`}
-      ><GmailIcon />
-    </a>
-    <a href={github} target="_blank" aria-label={`Perfil GitHub de ${name}`}
+    <GmailIcon email={email} />
+    <a
+      href={github}
+      target="_blank"
+      aria-label={`Perfil GitHub de ${name}`}
+      title="GitHub"
       ><GitHub />
     </a>
-    <a href={linkedin} target="_blank" aria-label={`Perfil LinkedIn de ${name}`}
+    <a
+      href={linkedin}
+      target="_blank"
+      aria-label={`Perfil LinkedIn de ${name}`}
+      title="LinkedIn"
       ><LinkedInIcon />
     </a>
     <a
       href={cv}
       download={`${name}-CV.pdf`}
       aria-label={`Descargar CV de ${name}`}
+      title="CV"
       ><CVIcon />
     </a>
   </footer>
@@ -121,7 +128,7 @@ const { city, country } = location;
     transform: scale(1.1);
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 900px) {
     .profile-card {
       align-items: start;
     }

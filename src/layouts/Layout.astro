@@ -1,6 +1,6 @@
 ---
 import { profile } from "../data/profile/profile-data.json";
-const { name, rol, image } = profile;
+const { name, rol, image, siteUrl } = profile;
 import "../assets/styles/Colores.css";
 ---
 
@@ -17,9 +17,14 @@ import "../assets/styles/Colores.css";
     <!-- Open Graph -->
     <meta property="og:title" content={`Portfolio de ${name}`} />
     <meta property="og:description" content={rol} />
-    <meta property="og:image" content={image} />
-    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:image" content={`${siteUrl}${image}`} />
+    <meta property="og:url" content={siteUrl} />
     <meta property="og:type" content="website" />
+
+    <!-- Scripts -->
+    <script src="/scripts/social-share.js" defer></script>
+    <script src="/scripts/clipboard-copy-email.js" defer></script>
+    <script src="/scripts/navigation-menu.js" defer></script>
   </head>
   <body>
     <slot />
@@ -70,8 +75,7 @@ import "../assets/styles/Colores.css";
     padding: 0;
     font-weight: inherit;
     font-style: normal;
-    font-size: 1rem;
-
+    font-size: 1rem; /* Tamaño uniforme para todos los elementos */
     color: var(--color-primary);
   }
 
@@ -142,35 +146,3 @@ import "../assets/styles/Colores.css";
     padding: 0;
   }
 </style>
-
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    const icons = document.querySelectorAll(".send");
-
-    icons.forEach((icon) => {
-      icon.addEventListener("click", async () => {
-        const shareData = {
-          title: document.title,
-          text: "¡Mira esta página web!",
-          url: window.location.href,
-        };
-
-        if (navigator.share) {
-          try {
-            await navigator.share(shareData);
-          } catch (err) {
-            console.error("Error al compartir:", err);
-          }
-        } else {
-          try {
-            await navigator.clipboard.writeText(shareData.url);
-            alert("Enlace copiado al portapapeles.");
-          } catch (err) {
-            console.error("Error al copiar enlace:", err);
-            alert("No se pudo compartir ni copiar el enlace.");
-          }
-        }
-      });
-    });
-  });
-</script>
