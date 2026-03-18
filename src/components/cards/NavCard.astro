@@ -4,9 +4,12 @@ import HomeIcon from "@/components/icons/nav/HomeIcon.astro";
 import ProjectIcon from "@/components/icons/nav/ProjectIcon.astro";
 import SkillIcon from "@/components/icons/nav/SkillIcon.astro";
 
-const currentUrl = new URL(Astro.request.url);
-const currentPath = currentUrl.pathname;
-const isActive = (path: string) => currentPath === path;
+const pathname = Astro.url.pathname;
+const currentPath = pathname.replace(/\/$/, "") || "/";
+const isActive = (path: string) => {
+  const cleanPath = path.replace(/\/$/, "") || "/";
+  return currentPath === cleanPath;
+};
 ---
 
 <nav>

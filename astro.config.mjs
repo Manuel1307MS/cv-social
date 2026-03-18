@@ -1,13 +1,14 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import path from 'path';
+import { defineConfig } from "astro/config";
+import path from "path";
 
 export default defineConfig({
+  trailingSlash: "never",
   vite: {
     resolve: {
       alias: {
-        '@': path.resolve('./src')
-      }
-    }
-  }
+        "@": path.resolve("./src"),
+      },
+    },
+  },
 });
