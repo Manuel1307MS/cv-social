@@ -1,0 +1,11 @@
+{
+    "bufonio":{
+        "name": "Bufonio",
+        "timeInit": "2025",
+        "timeEnd": "2026",
+        "description": "Bufonio es una plataforma de feedback anónimo que usa inteligencia artificial para convertir las opiniones de los empleados en mensajes constructivos con un toque de humor, facilitando una comunicación más abierta y reduciendo la tensión entre equipos y líderes.",
+        "category": "project",
+        "image": "/posts/projects/bufonio.webp",
+        "url": "https://bufonio.vercel.app"
+    }
+}

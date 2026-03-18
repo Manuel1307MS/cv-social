@@ -1,11 +1,10 @@
 ---
 import SocialCard from "@/components/cards/SocialCard.astro";
-import JavaIcon from "@/components/icons/posts/skills/JavaIcon.astro";
-import MySQLIcon from "@/components/icons/posts/skills/MySQLIcon.astro";
-import SpringIcon from "@/components/icons/posts/skills/SpringIcon.astro";
-import { backend } from "@/data/posts/skills-data.json";
+import TailwindIcon from "@/components/icons/posts/skills/TailwindIcon.astro";
+import TypeScriptIcon from "@/components/icons/posts/skills/TypeScriptIcon.astro";
+import { frontendB } from "@/data/posts/skills-data.json";
 
-const { name, timeInit, description, category } = backend;
+const { name, timeInit, description, category } = frontendB;
 ---
 
 <SocialCard
@@ -14,32 +13,29 @@ const { name, timeInit, description, category } = backend;
   description={description}
   category={category}
 >
-  <div class="container-backend">
-    <figure class="java">
-      <JavaIcon />
-      <figcaption>Java</figcaption>
+  <div class="container-frontend">
+    <figure class="typescript">
+      <TypeScriptIcon />
+      <figcaption>TypeScript</figcaption>
     </figure>
-    <figure class="spring">
-      <SpringIcon />
-      <figcaption>Spring</figcaption>
-    </figure>
-    <figure class="mysql">
-      <MySQLIcon />
-      <figcaption>MySQL</figcaption>
+    <figure class="tailwind">
+      <TailwindIcon />
+      <figcaption>Tailwind</figcaption>
     </figure>
   </div>
 </SocialCard>
 
 <style>
-  .container-backend {
+  .container-frontend {
     width: 100%;
     height: 100%;
+
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
 
+    gap: 1rem;
     padding: 1rem;
   }
 
@@ -53,7 +49,7 @@ const { name, timeInit, description, category } = backend;
     gap: 3px;
 
     width: 100%;
-    height: 60%;
+    height: 100%;
 
     transition: transform 0.2s ease;
   }
@@ -67,16 +63,12 @@ const { name, timeInit, description, category } = backend;
     color: black;
   }
 
-  .java:hover {
-    background-color: #fdedec;
-  }
-
-  .spring:hover {
-    background-color: #eafaf1;
-  }
-
-  .mysql:hover {
+  .typescript:hover {
     background-color: #eaf2f8;
+  }
+
+  .tailwind:hover {
+    background-color: #ebf5fb;
   }
 
   @media (max-width: 1250px) and (min-width: 900px) {

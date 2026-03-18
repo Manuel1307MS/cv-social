@@ -1,5 +1,5 @@
 ---
-import { interests } from "../../data/profile/profile-data.json";
+import { interests } from "@/data/profile/profile-data.json";
 ---
 
 <article class="interests-card">
@@ -18,8 +18,8 @@ import { interests } from "../../data/profile/profile-data.json";
     width: 100%;
     height: auto;
     overflow: hidden;
-    background-color: var(--color-background-primary);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-background-card);
+    box-shadow: var(--shadow-card);
 
     display: flex;
     flex-direction: column;
@@ -27,6 +27,8 @@ import { interests } from "../../data/profile/profile-data.json";
     gap: 1rem;
 
     padding: 1rem;
+
+    border-radius: 0.5rem;
   }
 
   h1 {
@@ -44,6 +46,5 @@ import { interests } from "../../data/profile/profile-data.json";
     border-radius: 1rem;
     padding-left: 10px;
     padding-right: 10px;
-    background-color: rgba(10, 102, 194, 0.1);
   }
 </style>

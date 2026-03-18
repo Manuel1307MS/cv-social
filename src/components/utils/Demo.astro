@@ -1,0 +1,55 @@
+---
+import DemoIcon from "@/components/icons/general/DemoIcon.astro";
+
+const { url, name } = Astro.props;
+---
+
+<a
+  href={url}
+  target="_blank"
+  aria-label={`Proyecto ${name}`}
+  title="Visitar demo"
+>
+  <figure>
+    <DemoIcon />
+    <figcaption>Demo</figcaption>
+  </figure>
+</a>
+<style>
+  a {
+    background-color: var(--color-primary);
+    border-radius: 0.35rem;
+    transition: transform 0.2s ease;
+
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  a:hover {
+    transform: scale(1.1);
+  }
+
+  figure {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  figcaption {
+    color: var(--color-background);
+  }
+
+  @media (max-width: 1250px) and (min-width: 900px) {
+    figcaption {
+      display: none;
+    }
+  }
+
+  @media (max-width: 450px) {
+    figcaption {
+      display: none;
+    }
+  }
+</style>

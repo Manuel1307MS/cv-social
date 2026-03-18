@@ -1,0 +1,9 @@
+{
+    "error":{
+        "name": "Error 404",
+        "timeInit": "2025",
+        "description": "¡Ups! La página que estás buscando no existe.",
+        "category": "error",
+        "image": "/posts/utils/error-404.webp"
+    }
+}

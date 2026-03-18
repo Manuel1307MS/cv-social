@@ -7,13 +7,12 @@
   width="30"
   height="30"
   viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
+  fill="#ff3040"
+  stroke="#ff3040"
   stroke-width="1.5"
   stroke-linecap="round"
   stroke-linejoin="round"
   class="heart"
-  onclick="this.classList.toggle('filled')"
   ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
     d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"
   ></path></svg
@@ -21,17 +20,24 @@
 
 <style>
   .heart {
-    color: var(--color-primary);
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: transform 0.2s ease;
+    transform-origin: center;
   }
 
-  .heart:hover {
-    stroke: #ff3040;
+  .heart:active {
+    animation: pop 0.3s;
   }
 
-  .heart.filled {
-    fill: #ff3040;
-    stroke: #ff3040;
+  @keyframes pop {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
 </style>

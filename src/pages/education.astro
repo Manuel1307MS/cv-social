@@ -1,0 +1,15 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import LayoutSplit from "@/layouts/LayoutSplit.astro";
+import HighSchool from "@/posts/education/HighSchool.astro";
+import QuickLearning from "@/posts/education/QuickLearning.astro";
+import University from "@/posts/education/University.astro";
+---
+
+<Layout>
+  <LayoutSplit>
+    <QuickLearning />
+    <University />
+    <HighSchool />
+  </LayoutSplit>
+</Layout>

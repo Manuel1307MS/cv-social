@@ -1,48 +1,24 @@
-# Astro Starter Kit: Basics
+# 🌐 CV-Social
 
-```sh
-npm create astro@latest -- --template basics
-```
+**CV-Social** es un currículum vitae interactivo y social que combina lo mejor de un portfolio profesional con funciones propias de una red social.  
+Construido con **[Astro](https://astro.build)**, este proyecto presenta tu perfil, experiencia y proyectos de una forma dinámica, moderna y socialmente inspirada.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+---
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 Características principales
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+- 🧩 **Interfaz tipo red social:** tu portfolio presentado como si fuera un perfil dentro de una plataforma social.
+- 💾 **Fuente de datos única:** toda la información se carga desde archivos **JSON**, lo que permite actualizar fácilmente los contenidos sin tocar el código.
+- ⚡ **Rendimiento optimizado:** gracias a **Astro**, el sitio es rápido, ligero y altamente eficiente.
+- 🎨 **Diseño modular y adaptable:** fácil de personalizar según tu estilo o necesidades.
+- 📱 **Responsive:** completamente adaptado para móviles, tablets y escritorio.
 
-## 🚀 Project Structure
+---
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🧠 Tecnologías utilizadas
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- **Astro** — Framework principal para la construcción del sitio.
+- **JSON** — Fuente de datos central.
+- **HTML / CSS / JavaScript** — Personalizaciones visuales y funcionales.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---

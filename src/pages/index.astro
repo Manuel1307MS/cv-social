@@ -1,19 +1,43 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import LayoutSplit from "../layouts/LayoutSplit.astro";
-import HighSchool from "../posts/education/HighSchool.astro";
-import QuickLearning from "../posts/education/QuickLearning.astro";
-import University from "../posts/education/University.astro";
-import Backend from "../posts/skills/Backend.astro";
-import Frontend from "../posts/skills/Frontend.astro";
+import AboutMeCard from "@/components/cards/AboutMeCard.astro";
+import InterestsCard from "@/components/cards/InterestsCard.astro";
+import ProfileCard from "@/components/cards/ProfileCard.astro";
+import TechnologiesCard from "@/components/cards/TechnologiesCard.astro";
+import Layout from "@/layouts/Layout.astro";
+import LayoutSplit from "@/layouts/LayoutSplit.astro";
+import HighSchool from "@/posts/education/HighSchool.astro";
+import QuickLearning from "@/posts/education/QuickLearning.astro";
+import University from "@/posts/education/University.astro";
+import Bufonio from "@/posts/projects/Bufonio.astro";
+import Backend from "@/posts/skills/Backend.astro";
+import FrontendA from "@/posts/skills/FrontendA.astro";
+import FrontendB from "@/posts/skills/FrontendB.astro";
 ---
 
 <Layout>
   <LayoutSplit>
+    <div class="mobile"><ProfileCard /></div>
+    <div class="mobile"><AboutMeCard /></div>
+    <div class="mobile"><TechnologiesCard /></div>
+    <div class="mobile"><InterestsCard /></div>
+    <Bufonio />
+    <FrontendB />
     <QuickLearning />
-    <Frontend />
+    <FrontendA />
     <University />
     <Backend />
     <HighSchool />
   </LayoutSplit>
 </Layout>
+
+<style>
+  .mobile {
+    display: none;
+  }
+
+  @media (max-width: 900px) {
+    .mobile {
+      display: flex;
+    }
+  }
+</style>

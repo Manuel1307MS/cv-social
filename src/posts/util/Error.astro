@@ -1,29 +1,28 @@
 ---
 import SocialCard from "@/components/cards/SocialCard.astro";
-import { highSchool } from "@/data/posts/education-data.json";
+import { error } from "@/data/posts/utils/error.json";
 
-const { name, timeInit, timeEnd, description, category, image } = highSchool;
+const { name, timeInit, description, category, image } = error;
 ---
 
 <SocialCard
   title={name}
   timeInit={timeInit}
-  timeEnd={timeEnd}
   description={description}
   category={category}
 >
-  <div class="container-high-school">
+  <div class="container-error">
     <img src={image} alt={name} />
   </div>
 </SocialCard>
 
 <style>
-  .container-high-school {
+  .container-error {
     width: 100%;
     height: 100%;
   }
 
-  .container-high-school img {
+  .container-error img {
     width: 100%;
     height: 100%;
     object-fit: cover;

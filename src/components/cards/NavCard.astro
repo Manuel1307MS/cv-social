@@ -1,38 +1,42 @@
 ---
-import EducationIcon from "../icons/nav/EducationIcon.astro";
-import HomeIcon from "../icons/nav/HomeIcon.astro";
-import ProjectIcon from "../icons/nav/ProjectIcon.astro";
-import SkillIcon from "../icons/nav/SkillIcon.astro";
+import EducationIcon from "@/components/icons/nav/EducationIcon.astro";
+import HomeIcon from "@/components/icons/nav/HomeIcon.astro";
+import ProjectIcon from "@/components/icons/nav/ProjectIcon.astro";
+import SkillIcon from "@/components/icons/nav/SkillIcon.astro";
+
+const currentUrl = new URL(Astro.request.url);
+const currentPath = currentUrl.pathname;
+const isActive = (path: string) => currentPath === path;
 ---
 
 <nav>
   <ul>
-    <li data-category="all" class="active">
-      <a href="#">
+    <li class={isActive("/") ? "active" : ""}>
+      <a href="/" title="Inicio">
         <figure>
           <HomeIcon />
           <figcaption>Inicio</figcaption>
         </figure>
       </a>
     </li>
-    <li data-category="project">
-      <a href="#">
+    <li class={isActive("/projects") ? "active" : ""}>
+      <a href="/projects" title="Proyectos">
         <figure>
           <ProjectIcon />
           <figcaption>Proyectos</figcaption>
         </figure>
       </a>
     </li>
-    <li data-category="education">
-      <a href="#">
+    <li class={isActive("/education") ? "active" : ""}>
+      <a href="/education" title="Educación">
         <figure>
           <EducationIcon />
           <figcaption>Educación</figcaption>
         </figure>
       </a>
     </li>
-    <li data-category="skill">
-      <a href="#">
+    <li class={isActive("/skills") ? "active" : ""}>
+      <a href="/skills" title="Skills">
         <figure>
           <SkillIcon />
           <figcaption>Skills</figcaption>
@@ -44,8 +48,8 @@ import SkillIcon from "../icons/nav/SkillIcon.astro";
 
 <style>
   nav {
-    background-color: var(--color-background-primary);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-background-card);
+    box-shadow: var(--shadow-card);
   }
 
   ul {

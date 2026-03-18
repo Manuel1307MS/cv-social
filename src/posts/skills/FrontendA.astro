@@ -1,13 +1,13 @@
 ---
-import SocialCard from "../../components/cards/SocialCard.astro";
-import AstroIcon from "../../components/icons/posts/skills/AstroIcon.astro";
-import CSSIcon from "../../components/icons/posts/skills/CSSIcon.astro";
-import HTMLIcon from "../../components/icons/posts/skills/HTMLIcon.astro";
-import JavaScriptIcon from "../../components/icons/posts/skills/JavaScriptIcon.astro";
-import ReactIcon from "../../components/icons/posts/skills/ReactIcon.astro";
-import { frontend } from "../../data/posts/skills-data.json";
+import SocialCard from "@/components/cards/SocialCard.astro";
+import AstroIcon from "@/components/icons/posts/skills/AstroIcon.astro";
+import CSSIcon from "@/components/icons/posts/skills/CSSIcon.astro";
+import HTMLIcon from "@/components/icons/posts/skills/HTMLIcon.astro";
+import JavaScriptIcon from "@/components/icons/posts/skills/JavaScriptIcon.astro";
+import ReactIcon from "@/components/icons/posts/skills/ReactIcon.astro";
+import { frontendA } from "@/data/posts/skills-data.json";
 
-const { name, timeInit, description, category } = frontend;
+const { name, timeInit, description, category } = frontendA;
 ---
 
 <SocialCard
@@ -80,7 +80,7 @@ const { name, timeInit, description, category } = frontend;
     align-items: center;
     justify-content: center;
     border-radius: 1rem;
-    background-color: #f4f2ee;
+    background-color: #f5f5f5;
     gap: 3px;
 
     width: 100%;

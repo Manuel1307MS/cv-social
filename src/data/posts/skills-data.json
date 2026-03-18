@@ -1,5 +1,11 @@
 {
-     "frontend":{
+    "frontendB":{
+        "name": "Frontend",
+        "timeInit": "2025",
+        "description": "Como parte de mi evolución en frontend, integré TypeScript y Tailwind CSS a mis proyectos, fortaleciendo la calidad del código y la construcción de interfaces modernas, escalables y bien estructuradas.",
+        "category": "skill"
+    },
+    "frontendA":{
         "name": "Frontend",
         "timeInit": "2024",
         "description": "Buscando fortalecer mi perfil como desarrollador, inicié mi aprendizaje en desarrollo frontend, adquiriendo conocimientos en HTML, CSS, JavaScript, así como en frameworks modernos como React y Astro.",

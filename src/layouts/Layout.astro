@@ -1,7 +1,11 @@
 ---
-import { profile } from "../data/profile/profile-data.json";
+import { profile } from "@/data/profile/profile-data.json";
 const { name, rol, image, siteUrl } = profile;
-import "../assets/styles/Colores.css";
+
+import "@/assets/styles/Colores.css";
+import Toast from "@/components/utils/Toast.astro";
+
+import { ClientRouter } from "astro:transitions";
 ---
 
 <!doctype html>
@@ -24,10 +28,13 @@ import "../assets/styles/Colores.css";
     <!-- Scripts -->
     <script src="/scripts/social-share.js" defer></script>
     <script src="/scripts/clipboard-copy-email.js" defer></script>
-    <script src="/scripts/navigation-menu.js" defer></script>
   </head>
   <body>
-    <slot />
+    <ClientRouter />
+    <main>
+      <slot />
+    </main>
+    <Toast />
   </body>
 </html>
 
@@ -47,12 +54,10 @@ import "../assets/styles/Colores.css";
     min-height: 100vh;
     font-family: system-ui, sans-serif;
     line-height: 1.5;
-    background-color: var(--color-background-secondary);
-    color: var(--color-text, #000);
+    background-color: var(--color-background);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     padding: 0;
-    scroll-behavior: smooth;
     scrollbar-gutter: stable;
   }
 
